@@ -1,23 +1,21 @@
-# 在导入matplotlib之前设置后端
 import matplotlib
-matplotlib.use('Agg')  # 添加这一行
-from flask import Flask, render_template, request
+from flask import Flask, request
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
 import os
-import io
-import base64
 import matplotlib as mpl
 from datetime import datetime
 import socket
 from werkzeug.serving import run_simple
+from flask import Flask, render_template
 
 # 设置中文字体支持
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
 plt.rcParams['axes.unicode_minus'] = False    # 用来正常显示负号
 mpl.rcParams['font.size'] = 12
+
+matplotlib.use('Agg') 
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/images'
@@ -211,10 +209,7 @@ def predict():
 # if __name__ == '__main__':
 #     app.run(debug=True)
 
-from flask import Flask, render_template
-
-# 替换现有的运行代码
-# 替换最后的运行代码为：
+# 运行
 if __name__ == '__main__':
     # 获取本地IP地址
     hostname = socket.gethostname()
