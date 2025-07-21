@@ -13,6 +13,7 @@ import matplotlib as mpl
 from datetime import datetime
 import socket
 from werkzeug.serving import run_simple
+from flask import Flask, render_template
 
 # 设置中文字体支持
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
@@ -211,10 +212,7 @@ def predict():
 # if __name__ == '__main__':
 #     app.run(debug=True)
 
-from flask import Flask, render_template
-
-# 替换现有的运行代码
-# 替换最后的运行代码为：
+# 运行
 if __name__ == '__main__':
     # 获取本地IP地址
     hostname = socket.gethostname()
